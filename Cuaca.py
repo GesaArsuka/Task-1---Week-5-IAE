@@ -23,7 +23,7 @@ def searchCity(city_name) :
     description = weatherData['weather'][0]['description']
     icon = weatherData['weather'][0]['icon']
     temperature = int(weatherData['main']['temp'])-273
-    pressure = int(weatherData['main']['humidity'])
+    pressure = int(weatherData['main']['pressure'])
     windspeed = int(weatherData['wind']['speed'])
     
     return description, temperature, pressure, windspeed
