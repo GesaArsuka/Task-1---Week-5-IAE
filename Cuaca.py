@@ -2,7 +2,6 @@ import streamlit as st
 import requests
 from openai import OpenAI
 
-client = OpenAI(api_key="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")
 API_key = "60c3d76f4c0efdbf97ac6d7c40e9da7b"
 
 description = ""
@@ -35,6 +34,7 @@ st.title('Weather app')
 city_name = st.text_input("Which city do you want to look for?")
 
 if st.button("Search"):
+
     output = searchCity(city_name)
 
 
@@ -45,7 +45,7 @@ if st.button("Search"):
         "messages": [
             {
                 "role": "user",
-                "content": f"You are a weather person. Tell me about the weather today in {city_name} using these info of Weather description({description}), temperature{temperature}, pressure({pressure}), and windspeed({windspeed}) plus a few recommended avtivities to do in this weather"
+                "content": f"You are a weather person. Tell me about the weather today in {city_name} using these info of Weather description({description}), temperature of {temperature}, pressure of {pressure}, and windspeed of {windspeed} plus a few recommended activities to do in this weather"
             }
         ]
     }
